@@ -1,0 +1,28 @@
+#err_text {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+#err_text.on {
+    display: block;
+}
+#err_text2 {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+#err_text2.on {
+    display: block;
+}
+
+#err_text3 {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+#err_text3.on {
+    display: block;
+}
