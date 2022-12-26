@@ -40,7 +40,7 @@ public class DomainAuthenticationProvider implements AuthenticationProvider {
 
         if (count == Constant.MIN) {
             throw new UsernameNotFoundException("아이디를 확인 해주십시오.");
-        }else if (Objects.equals(admin.getAdminActive(), AdminEnum.NOT_ACTIVE.values())){
+        }else if (Objects.equals(admin.getAdminActive(), AdminEnum.NOT_ACTIVE.getRole())){
             throw new DisabledException("비활성화 계정입니다.");
         }
 
