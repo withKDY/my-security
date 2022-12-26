@@ -31,13 +31,14 @@ public class DomainAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+
         String adminId = authentication.getName();
 
         int count = loginService.adminIdDuplicateCheck(adminId);
-
+        
         Admin admin = loginService.findAdminInformation(authentication.getName());
 
-        if (count > Constant.MIN) {
+        if (count == Constant.MIN) {
             throw new UsernameNotFoundException("아이디를 확인 해주십시오.");
         }else if (Objects.equals(admin.getAdminActive(), AdminEnum.NOT_ACTIVE.values())){
             throw new DisabledException("비활성화 계정입니다.");
